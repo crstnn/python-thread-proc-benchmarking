@@ -14,14 +14,15 @@ def do_time(func: callable):
     return result, end_time - start_time
 
 
-result, time = do_time(do_serial_count)
-print(f'Serial result: {result}, '
-      f'Time taken: {time:.4f} seconds')
+if __name__ == '__main__':
+    result, time = do_time(do_serial_count)
+    print(f'Serial result: {result}, '
+          f'Time taken: {time:.4f} seconds')
 
-result, time = do_time(do_thread_count_1)
-print(f'Threading (using `multiprocessing` shared var) result: {result}, '
-      f'Time taken: {time:.4f} seconds')
+    result, time = do_time(do_thread_count_1)
+    print(f'Threading (using `multiprocessing` shared var) result: {result}, '
+          f'Time taken: {time:.4f} seconds')
 
-result, time = do_time(do_proc_count)
-print(f'Multiprocessing result: {result}, '
-      f'Time taken: {time:.4f} seconds')
+    result, time = do_time(do_proc_count)
+    print(f'Multiprocessing result: {result}, '
+          f'Time taken: {time:.4f} seconds')
